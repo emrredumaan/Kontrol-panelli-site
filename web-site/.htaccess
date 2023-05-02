@@ -1,0 +1,12 @@
+RewriteEngine on
+
+ErrorDocument 404 http://localhost/web-site/404.php
+
+RewriteRule ^hakkimizda$ hakkimizda.php [NC,L]
+RewriteRule ^bize-ulasin$ iletisim.php [NC,L]
+RewriteRule ^haberler$ haberler.php [NC,L]
+RewriteRule ^anasayfa$ index.php [NC,L]
+
+RewriteRule ^([0-9a-zA-Z-_]+)-([0-9]+)$   haber-detay.php?sef=$1&icerik_id=$2 [L,QSA]
+
+RewriteRule ^([-9a-zA-Z-_]+)-([0-9]+)$ haber-detay.php?sef=$1&haber_id=$2 [L,QSA]
